@@ -36,14 +36,40 @@ We have deployed an example bound to a free Suno account, so it has daily usage 
 
 ## Features
 
-- Perfectly implements the creation API from suno.ai.
-- Automatically keep the account active.
-- Solve CAPTCHAs automatically using [2Captcha](https://2captcha.com) and [Playwright](https://playwright.dev) with [rebrowser-patches](https://github.com/rebrowser/rebrowser-patches).
-- Compatible with the format of OpenAI’s `/v1/chat/completions` API.
-- Supports Custom Mode.
-- One-click deployment to [Vercel](#deploy-to-vercel) & [Docker](#docker).
-- In addition to the standard API, it also adapts to the API Schema of Agent platforms like GPTs and Coze, so you can use it as a tool/plugin/Action for LLMs and integrate it into any AI Agent.
-- Permissive open-source license, allowing you to freely integrate and modify.
+- ✅ **Music Generation**: Create music from text prompts.
+- ✅ **Custom Mode**: Full control over lyrics, style, and title.
+- ✅ **Audio Extension**: Continue existing songs from any point.
+- ✅ **Concatenation**: Join clips to form a full song.
+- ✅ **Stems Generation**: Separate vocals and instrumentals.
+- ✅ **Lyrics Generation**: Automatically create lyrics with AI.
+- ✅ **Lyrics Alignment**: Get exact timing for each word.
+- ✅ **Persona Management**: List and manage your personas.
+- ✅ **Robust Infrastructure**:
+  - **TLS Fingerprinting**: JA3/JA4 detection bypass using CycleTLS.
+  - **Proxy Support**: HTTP and SOCKS5 to avoid rate limits.
+  - **Fingerprint Rotation**: Simulates different devices (Android/iOS).
+  - **Captcha Solver**: Automatic integration with 2Captcha.
+- ✅ **Compatibility**: OpenAI `/v1/chat/completions` format.
+- ✅ **Easy Deploy**: Docker and Vercel support.
+
+## API Endpoints
+
+### Generation
+- `/api/generate`: Generate music from simple description.
+- `/api/custom_generate`: Generate music with custom lyrics and style.
+- `/api/generate_lyrics`: Generate lyrics for songs.
+
+### Manipulation
+- `/api/extend_audio`: Extend an existing audio clip.
+- `/api/concat`: Concatenate clips (e.g., Part 1 + Part 2).
+- `/api/generate_stems`: Separate stems (vocals/instrumental).
+
+### Information
+- `/api/get`: Get song details.
+- `/api/get_limit`: Check usage limits and credits.
+- `/api/get_aligned_lyrics`: Get synchronized lyrics.
+- `/api/persona`: Manage personas.
+- `/api/clip`: Get specific clip details.
 
 ## Getting Started
 

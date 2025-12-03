@@ -42,8 +42,10 @@ export async function POST(req: NextRequest) {
       headers: corsHeaders
     });
   } catch (error: any) {
-    console.error('Error generating audio:', JSON.stringify(error.response.data));
-    return new NextResponse(JSON.stringify({ error: 'Internal server error: ' + JSON.stringify(error.response.data.detail) }), {
+    console.error('Error generating audio:', error);
+    const errorMessage = error?.message || error?.toString() || 'Unknown error';
+    
+    return new NextResponse(JSON.stringify({ error: errorMessage }), {
       status: 500,
       headers: {
         'Content-Type': 'application/json',
